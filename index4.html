@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        body{
+    background: rgb(58,180,154);
+    background: radial-gradient(circle, rgba(58,180,154,1) 50%, rgba(112,4,4,1) 64%, rgba(252,176,69,1) 100%);
+}
+h1{
+    text-align: center;
+}
+fieldset{
+        width: 50%;
+    border: 5px solid rgb(209, 62, 4);
+    border-radius: 25px;
+    text-align: left;
+    
+}
+input:required{
+    border: 2px dashed red;
+    font-weight: 400;
+}
+input:optional{
+    border: 2px dashed blueviolet;
+    font-weight: 400;
+}
+select{
+    background-color:blanchedalmond;
+    border-radius: 10px;
+    color: hwb(0 7% 43%);
+    cursor: pointer;
+    border: 2px dashed orchid;
+}
+.sub:hover{
+    color: red;
+    font-size: larger;
+    cursor: pointer;
+}
+.sub:active{
+    background-color: blue;
+    font-style: oblique;
+    font-size: larger;
+}
+input[readonly]{
+    background-color: khaki;
+}
+input[type="radio"]:checked{
+    height: 20px;
+    width: 20px;
+   
+}
+input[type="radio"]:checked +label{
+    color: chartreuse;
+    font-size: 20px;
+}
+input[type="radio"]:hover{
+    cursor: pointer;
+    font-size: medium;
+}
+p{
+    display: none;
+}
+input:hover + p{
+    display: inline;
+    background-color: rgb(165, 42, 161);
+    font-weight: 600;
+}
+input:focus{
+    background-color: rgb(226, 150, 43);
+    font-weight: 500;
+}
+img{
+    display: none;
+}
+input[type="Email"]:focus:valid ~ img.valid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[type="Email"]:focus:invalid ~ img.invalid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[name="age"]:focus:in-range:valid~img.valid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[name="age"]:focus:out-of-range:invalid~img.invalid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[type="tel"]:focus:valid~img.valid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[type="tel"]:focus:invalid~img.invalid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[type="password"]:focus:valid~img.valid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+input[type="password"]:focus:invalid~img.invalid{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+textarea{
+    font-weight: 500;
+}
+
+    </STYle>
+</head>
+<body>
+<h1>COURSE REGISTRATION</h1>
+<form action="">
+    <center><fieldset>
+        <legend>Personal Details</legend>
+        <table>
+            <tr>
+                <td><label for="">FNAME</label></td>
+                <td><input type="text" name="FN" id="" placeholder="Ex:Narasimha" required>  <p>Enetr your Name</p></td>
+                
+            </tr>
+            <tr>
+                <td><label for="">SURNAME</label></td>
+                <td><input type="text" name="SN" id="" placeholder="Ex:Tanguturi" optional>  <p>Enter your surname(optional)</p></td>
+            </tr>
+            <tr>
+                <td><label for="">EMAIL</label></td>
+                <td> <input type="email" name="mail" id="" required placeholder="Ex:abc@gmail.com"> <p>Enter your Email</p> <img src="ok.webp" class="valid"> <img src="no.webp" class="invalid"> </td>
+            </tr>
+            <tr>
+                <td> <label for="">PHONENUM</label></td>
+                <td> <input type="tel" pattern="\d{10}" name="phno" id="" required placeholder="Ex:1234567" >  <p>Enter Ph number</p><img src="ok.webp" class="valid"> <img src="no.webp" class="invalid"></td>
+            </tr>
+            <tr>
+                <td><label for="">PASSWORD</label></td>
+                <td> <input type="password" name="psswd" id="" required placeholder="Ex:min 8 characters" pattern=".*[a-zA-Z@$!%*?&].*" minlength="8">  <p>atleast provide 1lowercase <br> 1uppercase 1spl char</p><img src="ok.webp" class="valid"> <img src="no.webp" class="invalid"></td>
+            </tr>
+            <tr>
+                <td><label for="">CONFIRM PASSWORD</label></td>
+                <td><input type="password" required  name="cpsswd" placeholder="Ex:min 8 characters">  <p>confirm your password</p></td>
+            </tr>
+            <tr>
+                <td><label for="">DOB</label></td>
+                <td><input type="date" name="dob" id="" required>  <p>Enter your Date of birth</p></td>
+            </tr>
+            <tr>
+                <td><label for="">AGE</label></td>
+                <td><input type="number" name="age" id="" required min="18" max="100">  <p>Enter your age</p><img src="ok.webp" class="valid"> <img src="no.webp" class="invalid"> </td>
+            </tr>
+            <tr>
+                <td><label for="">GENDER</label></td>
+                <td>
+                    <input type="radio" name="gender" value="M"><label for="">Male</label> 
+                    <input type="radio" name="gender" value="F"><label for="">FeMale </label>
+                    <input type="radio" name="gender" value="O"><label for="">others</label>
+            </tr>
+            <tr>
+                <td><label for="">COUNTRY</label></td>
+                <td><select name="country" id="">
+                    <option value="">india</option>
+                    <option value="">Russia</option>
+                    <option value="">Australia</option>
+                </select><br></td>
+            </tr>
+            <tr>
+                <td><label for="">UPLOAD IMAGE</label></td>
+                <td><input type="file" name="" id=""><br></td>
+            </tr>
+            <tr>
+                <td><input type="reset" name="" id="" class="sub"></td>
+            </tr>
+        </table>
+    </fieldset></center>
+</form><br>
+<form action="">
+    <center><fieldset>
+        <legend>Course Details</legend>
+        <table>
+            <tr>
+                <td><label for="">SELECT COURSE</label></td>
+                <td><select name="" id="">
+                    <option value="">JFSWD</option>
+                    <option value="">PFSWD</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="">INSTITUTE NAME</label></td>
+                <td><input type="text" value="TapAcademy" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="">DELIVERY MODE</label></td>
+                <td>
+                    <input type="radio" name="mode" value="ON"><label for="">OFLINE</label>
+                    <input type="radio" name="mode" value="OFF"><label for="">ONLINE</label>
+            </tr>
+            <TR>
+                <td><label for="">COMMENTS</label></td>
+                <td><textarea name="" cols="30" rows="10"></textarea></td>
+            </TR>
+        </table>
+    </fieldset><br></center>
+    <center><input type="submit" name="" id="" class="sub"></center>
+</form>
+</body>
+</html>
